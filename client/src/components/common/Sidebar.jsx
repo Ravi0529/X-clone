@@ -62,7 +62,7 @@ const Sidebar = () => {
 
 					<li className='flex justify-center md:justify-start'>
 						<Link
-							to={`/profile/${authUser?.username}`}
+							to={`/profile/${authUser?.user?.username}`}
 							className='flex gap-3 items-center hover:bg-stone-900 transition-all rounded-full duration-300 py-2 pl-2 pr-4 max-w-fit cursor-pointer'
 						>
 							<FaUser className='w-6 h-6' />
@@ -82,8 +82,8 @@ const Sidebar = () => {
 						</div>
 						<div className='flex justify-between flex-1'>
 							<div className='hidden md:block'>
-								<p className='text-white font-bold text-sm w-20 truncate'>{authUser?.fullName}</p>
-								<p className='text-slate-500 text-sm'>@{authUser?.username}</p>
+								<p className='text-white font-bold text-sm w-20 truncate'>{authUser?.user?.fullName}</p>
+								<p className='text-slate-500 text-sm'>@{authUser?.user?.username}</p>
 							</div>
 							<BiLogOut
 								className='w-5 h-5 cursor-pointer'
