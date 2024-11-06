@@ -30,7 +30,7 @@ const CreatePost = () => {
 				});
 				const data = await res.json();
 				if (!res.ok) {
-					throw new Error(data.error || "Something went wrong");
+					throw new Error("Error: Post limit - 5MB" || data.error || "Something went wrong");
 				}
 				return data;
 			} catch (error) {
