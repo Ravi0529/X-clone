@@ -1,8 +1,67 @@
-# React + Vite
+# X Clone (Twitter Clone)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack clone of Twitter (now known as X) using the MERN stack. This project replicates core functionalities of the social media platform, including user authentication, profile management, post creation, and follow/like interactions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **User Authentication** with JWT tokens
+- **Password Security** using bcryptjs
+- **Profile Management** for user avatars and information
+- **Posts (Tweets)** with create, view, and delete features
+- **Likes and Follows** for social interaction
+- **Real-time Feed** with posts from followed users
+- **Responsive UI** for mobile and desktop
+
+## Tech Stack
+
+- **Frontend**: React, TanStack, Tailwind CSS, React Router
+- **Backend**: Node.js, Express, MongoDB, Mongoose, JWT, bcryptjs
+
+## Setup
+
+### Prerequisites
+
+- **Node.js** and **npm**
+- **MongoDB** (local or hosted)
+
+### Installation
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/your-username/x-clone.git
+   cd x-clone
+
+   ```
+
+2. **Navigate to the project directory**: After cloning the repository, change into the project directory using:
+
+   `cd X-clone`
+
+3. **Install dependencies**: X-clone has both a frontend and a backend. You will need to install dependencies for both parts of the application.
+
+   - For the **frontend**, navigate to the client folder and run:
+
+     `cd client`
+
+     `npm install`
+
+   - For the **backend**, navigate to the main folder and run:
+
+     `cd ..`
+
+     `npm install`
+
+4. **Set up environment variables**: In the main folder, create a `.env` file:
+
+   Replace the necessary elements found in the `.env.sample` file.
+
+5. **Run the application**: You will need to start both the frontend and backend servers.
+
+- To start the **backend**, navigate to the main folder and run:
+
+  `npm run dev`
+
+- To start the **frontend**, open a new terminal, navigate to the client folder, and run:
+
+  `npm run dev`
