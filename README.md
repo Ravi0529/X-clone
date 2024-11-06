@@ -30,27 +30,29 @@ A full-stack clone of Twitter (now known as X) using the MERN stack. This projec
 
    ```bash
    git clone https://github.com/your-username/x-clone.git
-   cd x-clone
-
    ```
 
 2. **Navigate to the project directory**: After cloning the repository, change into the project directory using:
 
-   `cd X-clone`
+   ```bash
+   cd X-clone
+   ```
 
 3. **Install dependencies**: X-clone has both a frontend and a backend. You will need to install dependencies for both parts of the application.
 
    - For the **frontend**, navigate to the client folder and run:
 
-     `cd client`
-
-     `npm install`
+   ```bash
+   cd client
+   npm install
+   ```
 
    - For the **backend**, navigate to the main folder and run:
 
-     `cd ..`
-
-     `npm install`
+   ```bash
+   cd ..
+   npm install
+   ```
 
 4. **Set up environment variables**: In the main folder, create a `.env` file:
 
