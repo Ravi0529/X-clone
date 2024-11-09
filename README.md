@@ -29,7 +29,7 @@ A full-stack clone of Twitter (now known as X) using the MERN stack. This projec
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/x-clone.git
+   git clone https://github.com/Ravi0529/X-clone.git
    ```
 
 2. **Navigate to the project directory**: After cloning the repository, change into the project directory using:
@@ -64,6 +64,7 @@ A full-stack clone of Twitter (now known as X) using the MERN stack. This projec
 
   `npm run dev`
 
-- To start the **frontend**, open a new terminal, navigate to the client folder, and run:
+
+
 
   `npm run dev`
