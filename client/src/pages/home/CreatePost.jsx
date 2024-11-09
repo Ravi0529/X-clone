@@ -63,42 +63,41 @@ const CreatePost = () => {
 	};
 
 	return (
-		<div className='flex p-4 items-start gap-4 border-b border-gray-700'>
+		<div className='flex p-4 items-start gap-4 border-b border-gray-700 sm:p-6 md:gap-6 lg:p-8'>
 			<div className='avatar'>
-				<div className='w-8 rounded-full'>
-					<img src={authUser.profileImg || "/avatar-placeholder.png"} />
+				<div className='w-8 h-8 rounded-full sm:w-10 sm:h-10 md:w-12 md:h-12'>
+					<img src={authUser.profileImg || "/avatar-placeholder.png"} alt='Profile' />
 				</div>
 			</div>
 			<form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
 				<textarea
-					className='textarea w-full p-0 text-lg resize-none border-none focus:outline-none  border-gray-800'
+					className='textarea w-full p-2 text-lg resize-none border-none focus:outline-none border-gray-800 sm:p-3'
 					placeholder='What is happening?!'
 					value={text}
 					onChange={(e) => setText(e.target.value)}
 				/>
 				{img && (
-					<div className='relative w-72 mx-auto'>
+					<div className='relative w-full max-w-xs mx-auto sm:max-w-sm md:max-w-md'>
 						<IoCloseSharp
-							className='absolute top-0 right-0 text-white bg-gray-800 rounded-full w-5 h-5 cursor-pointer'
+							className='absolute top-0 right-0 text-white bg-gray-800 rounded-full w-5 h-5 sm:w-6 sm:h-6 cursor-pointer'
 							onClick={() => {
 								setImg(null);
 								imgRef.current.value = null;
 							}}
 						/>
-						<img src={img} className='w-full mx-auto h-72 object-contain rounded' />
+						<img src={img} className='w-full h-auto object-contain rounded' />
 					</div>
 				)}
-
-				<div className='flex justify-between border-t py-2 border-t-gray-700'>
+				<div className='flex justify-between border-t py-2 border-t-gray-700 sm:py-3'>
 					<div className='flex gap-1 items-center'>
 						<CiImageOn
-							className='fill-primary w-6 h-6 cursor-pointer'
+							className='fill-primary w-6 h-6 sm:w-7 sm:h-7 cursor-pointer'
 							onClick={() => imgRef.current.click()}
 						/>
-						<BsEmojiSmileFill className='fill-primary w-5 h-5 cursor-pointer' />
+						<BsEmojiSmileFill className='fill-primary w-5 h-5 sm:w-6 sm:h-6 cursor-pointer' />
 					</div>
 					<input type='file' accept='image/*' hidden ref={imgRef} onChange={handleImgChange} />
-					<button className='btn btn-primary rounded-full btn-sm text-white px-4'>
+					<button className='btn btn-primary rounded-full btn-sm text-white px-4 py-1 sm:px-5 sm:py-2'>
 						{isPending ? "Posting..." : "Post"}
 					</button>
 				</div>

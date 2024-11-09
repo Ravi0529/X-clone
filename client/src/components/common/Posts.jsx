@@ -51,17 +51,17 @@ const Posts = ({ feedType, username, userId }) => {
 	return (
 		<>
 			{(isLoading || isRefetching) && (
-				<div className='flex flex-col justify-center'>
+				<div className='flex flex-col justify-center p-4 gap-4 sm:gap-6 md:gap-8'>
 					<PostSkeleton />
 					<PostSkeleton />
 					<PostSkeleton />
 				</div>
 			)}
 			{!isLoading && !isRefetching && posts?.length === 0 && (
-				<p className='text-center my-4'>No posts in this tab. Switch 👻</p>
+				<p className='text-center my-4 px-2 sm:my-6 sm:px-4'>No posts in this tab. Switch 👻</p>
 			)}
 			{!isLoading && !isRefetching && posts && (
-				<div>
+				<div className='p-4 sm:p-6 md:p-8'>
 					{posts.map((post) => (
 						<Post key={post._id} post={post} />
 					))}
