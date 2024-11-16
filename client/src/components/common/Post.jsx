@@ -17,8 +17,12 @@ const Post = ({ post }) => {
 	const queryClient = useQueryClient();
 	const postOwner = post.user;
 	const isLiked = post.likes.includes(authUser.user._id);
+	if (!post.user) {
+		return null;
+	}
 
-	const isMyPost = authUser.user._id === post.user._id;
+	// const isMyPost = authUser.user._id === post.user._id;
+	const isMyPost = post.user && authUser.user._id === post.user._id;
 
 	const formattedDate = formatPostDate(post.createdAt);
 
