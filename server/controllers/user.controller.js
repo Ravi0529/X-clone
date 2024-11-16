@@ -101,7 +101,7 @@ export const updateUser = async (req, res) => {
 
         if (currentPassword && newPassword) {
             const isMatch = await bcrypt.compare(currentPassword, user.password)
-			if (!isMatch) return res.status(400).json({ error: "Current password is incorrect" })
+            if (!isMatch) return res.status(400).json({ error: "Current password is incorrect" })
 
             // Check the new password against the regex
             const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
@@ -113,7 +113,7 @@ export const updateUser = async (req, res) => {
 
             // Hash the new password
             const salt = await bcrypt.genSalt(10);
-			user.password = await bcrypt.hash(newPassword, salt)
+            user.password = await bcrypt.hash(newPassword, salt)
 
             console.log("Password updated and hashed successfully.")
         }
@@ -150,5 +150,39 @@ export const updateUser = async (req, res) => {
     }
     catch (error) {
         res.status(500).json({ error: error.message })
+    }
+}
+
+export const getUserfollowing = async (req, res) => {
+    try {
+        const { user } = req.params
+
+        const userData = await User.findOne({ username: user }).populate('following', 'username fullName profileImg')
+
+        if (!userData) {
+            return res.status(404).json({ error: "User not found" })
+        }
+
+        res.status(200).json(userData.following)
+    } catch (error) {
+        console.error("Error occurred:", error.message)
+        res.status(500).json({ error: "Internal Server Error" })
+    }
+}
+
+export const getUserfollowers = async (req, res) => {
+    try {
+        const { user } = req.params
+
+        const userData = await User.findOne({ username: user }).populate('followers', 'username fullName profileImg')
+
+        if (!userData) {
+            return res.status(404).json({ error: "User not found" })
+        }
+
+        res.status(200).json(userData.followers)
+    } catch (error) {
+        console.error("Error occurred:", error.message)
+        res.status(500).json({ error: "Internal Server Error" })
     }
 }
