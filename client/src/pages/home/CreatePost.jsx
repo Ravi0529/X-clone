@@ -66,7 +66,7 @@ const CreatePost = () => {
 		<div className='flex p-4 items-start gap-4 border-b border-gray-700 sm:p-6 md:gap-6 lg:p-8'>
 			<div className='avatar'>
 				<div className='w-8 h-8 rounded-full sm:w-10 sm:h-10 md:w-12 md:h-12'>
-					<img src={authUser.profileImg || "/avatar-placeholder.png"} alt='Profile' />
+					<img src={authUser.user.profileImg || "/avatar-placeholder.png"} alt='Profile' />
 				</div>
 			</div>
 			<form className='flex flex-col gap-2 w-full' onSubmit={handleSubmit}>
